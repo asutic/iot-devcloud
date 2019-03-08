@@ -182,11 +182,20 @@ def progressIndicator(path, file_name , title, min_, max_):
     time.sleep(0.1)
 
 
-
 def progressUpdate(file_name, time_diff, frame_count, video_len):
     progress = round(100*(frame_count/video_len), 1)
     remaining_time = round((time_diff/frame_count)*(video_len-frame_count), 1)
     estimated_time = round((time_diff/frame_count)*video_len, 1)
+    with  open(file_name, "w") as progress_file:
+        progress_file.write(str(progress)+'\n')
+        progress_file.write(str(remaining_time)+'\n')
+        progress_file.write(str(estimated_time)+'\n')
+
+
+def simpleProgressUpdate(file_name, current_time, estimated_time):
+    progress = round(100*current_time/estimated_time, 1)
+    remaining_time = round(estimated_time - current_time, 1)
+    estimated_time = round(estimated_time, 1)
     with  open(file_name, "w") as progress_file:
         progress_file.write(str(progress)+'\n')
         progress_file.write(str(remaining_time)+'\n')

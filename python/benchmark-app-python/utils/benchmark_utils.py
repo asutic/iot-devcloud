@@ -43,7 +43,6 @@ def validate_args(args):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--path_to_images', type=str, required=True, help=HELP_MESSAGES['IMAGE_MESSAGE'])
     parser.add_argument('-m', '--path_to_model', type=str, required=True, help=HELP_MESSAGES['MODEL_MESSAGE'])
     parser.add_argument('-c', '--path_to_cldnn_config', type=str, required=False,
                         help=HELP_MESSAGES['CUSTOM_GPU_LIBRARY_MESSAGE'])
@@ -55,7 +54,7 @@ def parse_args():
                         help=HELP_MESSAGES['TARGET_DEVICE_MESSAGE'])
     parser.add_argument('-niter', '--number_iterations', type=int, required=False, default=None,
                         help=HELP_MESSAGES['ITERATIONS_COUNT_MESSAGE'])
-    parser.add_argument('-nireq', '--number_infer_requests', type=int, required=False, default=2,
+    parser.add_argument('-nireq', '--number_infer_requests', type=int, required=False, default=8,
                         help=HELP_MESSAGES['INFER_REQUESTS_COUNT_MESSAGE'])
     parser.add_argument('-nthreads', '--number_threads', type=int, required=False, default=None,
                         help=HELP_MESSAGES['INFER_NUM_THREADS_MESSAGE'])
@@ -63,6 +62,8 @@ def parse_args():
                         help=HELP_MESSAGES['BATCH_SIZE_MESSAGE'])
     parser.add_argument('-pin', '--infer_threads_pinning', type=str, required=False, default='YES',
                         choices=['YES', 'NO'], help=HELP_MESSAGES['INFER_THREADS_PINNING_MESSAGE'])
+    parser.add_argument("-o", "--output_dir", default='.', type=str, required=False,
+                        help=HELP_MESSAGES['OUTPUT_DIR_MESSAGE'])
     return parser.parse_args()
 
 

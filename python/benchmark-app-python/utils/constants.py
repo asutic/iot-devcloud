@@ -33,7 +33,8 @@ HELP_MESSAGES = {
     'CUSTOM_GPU_LIBRARY_MESSAGE': "Required for GPU custom kernels. Absolute path to an .xml file with the kernels description.",
     'BATCH_SIZE_MESSAGE': "Optional. Batch size value. If not specified, the batch size value is determined from IR",
     'INFER_THREADS_PINNING_MESSAGE': "Optional. Enable (\"YES\" is default value) or disable (\"NO\")"
-                                     "CPU threads pinning for CPU-involved inference."
+                                     "CPU threads pinning for CPU-involved inference.",
+    'OUTPUT_DIR_MESSAGE': "Directory where to place the results of the benchmark."
 }
 
 DEVICE_DURATION_IN_SECS = {
@@ -48,9 +49,10 @@ DEVICE_DURATION_IN_SECS = {
 
 IMAGE_EXTENSIONS = ['JPEG', 'JPG', 'PNG', 'BMP']
 
-MYRIAD_DEVICE_NAME = "MYRIAD"
 CPU_DEVICE_NAME = "CPU"
 GPU_DEVICE_NAME = "GPU"
+MYRIAD_DEVICE_NAME = "MYRIAD"
+HDDL_DEVICE_NAME = "HDDL"
 UNKNOWN_DEVICE_TYPE = "UNKNOWN"
 
 BATCH_SIZE_ELEM = 0
