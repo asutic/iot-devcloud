@@ -35,7 +35,7 @@ def videoHTML(title, videos_list, stats=None):
     '''.format(title=title, videos=video_string, stats_line=stats_line))
 
 
-def summaryPlot(results_dict, x_axis, y_axis, title):
+def summaryPlot(results_dict, x_axis, y_axis, title, fontsize=14):
     ''' Bar plot input:
 	results_dict: dictionary of path to result file and label {path_to_result:label}
 	x_axis: label of the x axis
@@ -47,8 +47,8 @@ def summaryPlot(results_dict, x_axis, y_axis, title):
     plt.title(title , fontsize=16, color='blue')
     plt.ylabel(y_axis, fontsize=16, color='blue')
     plt.xlabel(x_axis, fontsize=16, color='blue')
-    plt.xticks(fontsize=16)
-    plt.yticks(fontsize=16)
+    plt.xticks(fontsize=fontsize)
+    plt.yticks(fontsize=fontsize)
     time = []
     arch = []
     diff = 0
