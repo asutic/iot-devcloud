@@ -18,7 +18,11 @@
 from statistics import median
 from openvino.inference_engine import IENetwork, IEPlugin
 
+from pathlib import Path
 from utils.benchmark_utils import *
+
+sys.path.insert(0, str(Path().resolve().parent.parent))
+from demoTools.demoutils import progressUpdate, simpleProgressUpdate
 
 def main(args=None):
     try:
@@ -107,6 +111,7 @@ def main(args=None):
 
         job_id = os.environ['PBS_JOBID']
         stats_file = os.path.join(args.output_dir, 'stats_' + str(job_id) + '.txt')
+        progress_file_path = os.path.join(args.output_dir, 'i_progress_' + str(job_id) + '.txt')
 
         if args.api_type == 'sync':
             # warming up - out of scope
