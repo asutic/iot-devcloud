@@ -42,7 +42,7 @@ DEVICE_DURATION_IN_SECS = {
     "GPU": 60,
     "VPU": 60,
     "MYRIAD": 60,
-    "FPGA": 120,
+    "FPGA": 60,
     "HDDL": 60,
     "UNKNOWN": 120
 }
