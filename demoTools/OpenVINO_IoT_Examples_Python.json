@@ -24,14 +24,15 @@
     "intro": false,
     "list":
     {
-	"header": "List of IoT Examples for the Intel® Distribution of OpenVINO™ Toolkit in Python*",
+	"header": "List of IoT examples for Intel® Distribution of the OpenVINO™ in Python",
 	"labs":
 	[
 	    "python/benchmark-app-python/benchmark.ipynb",	    
         "python/flaw-detector-python/flawdetector-demo.ipynb",
 	    "python/object-detection-python/object_detection_demo.ipynb",
 	    "python/store-traffic-monitor-python/store_traffic_monitor_demo.ipynb",
-	    "python/safety-gear-detection-python/safety_gear_detection.ipynb"
+	    "python/safety-gear-detection-python/safety_gear_detection.ipynb",
+	    "python/OCR-usingLSTM-python/OCR.ipynb"
 	],
 	"messages":
 	{
